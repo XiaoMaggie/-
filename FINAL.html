@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="http://uni-mafumafu.jp/wp-content/themes/mafumafu/images/favicon.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MafuMafu fan club</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: auto;
+            color: #333;
+            min-width: 320px;
+            letter-spacing: -.1px;
+            font-size: 12px;
+            line-height: 1.5;
+            font-family: YuGothic, '游ゴシック', Verdana, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ ProN', sans-serif;
+            -webkit-text-size-adjust: 100%;
+            background-image: url(img/bodybg.png);
+        }
+
+        .header {
+            padding: 0px;
+            text-align: center;
+        }
+
+        .header img {
+            width: 35%;
+        }
+
+        /* 選單 style */
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* 主menu */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* 主menu end */
+
+        /* banner */
+        #container {
+            position: relative;
+            /* margin-left: 33%; */
+            left: 50px;
+            width: 1798px;
+            height: 400px;
+            /* border: 3px solid #333; */
+            overflow: hidden;
+            margin-bottom: 35px;
+
+        }
+
+        #main_container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 10px 0;
+            background: transparent;
+        }
+
+
+
+        @media screen and (min-width: 600px) {
+            #container {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+
+                margin-top: 0;
+                padding: 30px 0;
+                background: transparent;
+
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            #container {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+
+                margin-top: 0;
+                padding: 30px 0;
+                background: transparent;
+
+            }
+        }
+
+
+        #list {
+            position: relative;
+            z-index: 1;
+            width: 4200px;
+            height: 400px;
+            padding: 20px 0;
+        }
+
+        #list img {
+            float: left;
+            width: 600px;
+            height: 400px;
+
+
+        }
+
+        .arrow {
+            position: absolute;
+            top: 180px;
+            z-index: 2;
+            display: none;
+            width: 40px;
+            height: 40px;
+            font-size: 36px;
+            font-weight: bold;
+            line-height: 35px;
+            text-align: center;
+            color: #fff;
+            background-color: RGBA(0, 0, 0, .3);
+            cursor: pointer;
+        }
+
+        .arrow:hover {
+            background-color: RGBA(0, 0, 0, .7);
+        }
+
+        #container:hover .arrow {
+            display: block;
+        }
+
+        #prev {
+
+            left: 0px;
+        }
+
+        #next {
+            right: 0px;
+        }
+
+        /* banner end */
+
+        /* youtube */
+        #channel {
+            background: #000;
+            padding: 25px 0;
+            color: #fff;
+        }
+
+        .wrapper {
+            position: relative;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        #content_area {
+            width: 100%;
+        }
+
+        .wrapper:before,
+        .wrapper:after {
+            content: "";
+            display: table;
+        }
+
+        .wrapper:after {
+            clear: both;
+        }
+
+        #channel h2 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        ul,
+        li,
+        h1,
+        h2,
+        h4,
+        a,
+        strong {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            font-weight: normal;
+        }
+
+
+        h2 {
+            display: block;
+            font-size: 1.5em;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+
+        #channel h2 img {
+            max-width: 80%;
+        }
+
+        #channel .channel_btn {
+            text-align: center;
+            margin: 30px auto 0;
+        }
+
+        #channel .channel_btn img {
+            max-width: 100px;
+
+        }
+
+        #channel .channel_area ul {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        #channel .channel_area ul li {
+            width: 50%;
+            border-left: 1px solid #fff;
+            padding: 10px 20px;
+        }
+
+        #channel .channel_area ul li .channel {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            border: solid 1px #fff;
+        }
+
+        #channel .channel_area ul li p {
+            margin: 10px 0 0;
+            text-align: center;
+            font-size: 12px;
+            font-size: 1rem;
+        }
+
+        #channel .channel_area ul li .channel iframe {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media screen and (max-width:400px) {
+            #channel_area ul {
+
+                flex-wrap: wrap;
+            }
+        }
+
+        /* youtube end */
+
+        /* twitter & news */
+        .wrapper_news {
+            position: relative;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .wrapper:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+
+        section#news {
+            /* position: relative; */
+            float: left;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.5);
+            border: solid 1px #626262;
+            margin: 30px 30px 30px 30px;
+
+        }
+
+        section .more a {
+            -webkit-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+            display: block;
+            margin: auto;
+            background: #333;
+            padding: 5px 0;
+            border: solid 2px #333;
+            line-height: 12px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 12px;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .news_list li {
+            position: relative;
+            border-bottom: #333333 solid 1px;
+        }
+
+        .news_list li a.text {
+            padding: 15px 20px 10px 0;
+            display: block;
+            margin-top: 10px;
+            -webkit-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+        }
+
+        .SandboxRoot {
+            display: block;
+            background: 0 0;
+            font: normal normal 14px/1.4 Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
+            color: #292F33;
+            white-space: initial;
+
+        }
+
+        .SandboxRoot {
+            direction: ltr;
+            text-align: left;
+        }
+
+        section#tw_widget {
+            margin-left: 30px;
+            float: left;
+            /* margin-right: -500px; */
+        }
+
+
+        @media screen and (min-width: 900px) {
+            #main {
+                width: 100%;
+                display: flex;
+            }
+
+        }
+
+        @media screen and (max-width:600px) {
+            .wrapper_news {
+                width: 100%;
+            }
+
+
+        }
+
+        /* twitter & news end*/
+
+        /* adlinks */
+        section#links {
+            direction: ltr;
+            padding: 80px 80px;
+            margin: 0 0 55px;
+            float: left;
+        }
+
+        section#links .banner_area li {
+            margin-bottom: 15px;
+
+
+        }
+
+        section#links .banner_area li a img {
+            border: solid 1px #333;
+            width: 400px;
+        }
+
+        li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+        }
+
+        @media screen and (min-width: 900px) {
+            #links {
+                width: 100%;
+                display: flex;
+            }
+
+        }
+
+        /* adlinks */
+
+
+        /*內容分三等份 */
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 15px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* floatimg */
+        #main_visual {
+            float: left;
+            padding: 10px;
+        }
+
+        #singer.loaded {
+            animation: fadeIn 0.7s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards, fuwa 1.5s ease-in-out alternate infinite;
+            animation-delay: 1200ms;
+        }
+
+        #singer {
+            float: left;
+            /* padding: 10px;   */
+            width: 100%;
+            transform: translate(0, -20px);
+            opacity: 0;
+        }
+
+        #singer_bg_1.loaded {
+            animation: fadeIn 1200ms cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+            animation-delay: 200ms;
+    
+        }
+/* 
+        #singer_bg_2.loaded {
+            animation: fadeIn 1200ms cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+            animation-delay: 600ms;
+
+        }
+
+        #singer_bg_3.loaded {
+            animation: fadeIn 1200ms cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+            animation-delay: 1000ms;
+        } */
+
+
+        #singer_bg_1 {
+            float: left;
+            transform: translate(0, 15px);
+            opacity: 1;
+        }
+
+        #singer_bg_2 {
+            float: left;
+            top: -200px;
+            transform: translate(0, 15px);
+            opacity: 1;
+        }
+
+        #singer_bg_3 {
+            float: left;
+            transform: translate(0, 15px);
+            opacity: 1;
+        }
+
+        img {
+            vertical-align: middle;
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        img,
+        a img {
+            border: none;
+        }
+
+
+        @keyframes fuwa {
+            0% {
+                transform: translate(0, -170px);
+            }
+
+            100% {
+                transform: translate(0, -300px);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                transform: translate(0, 15px);
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+                transform: translate(0, 0);
+
+            }
+        }
+
+
+        /* floatimg end */
+
+
+
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media screen and (max-width:600px) {
+            .column {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .list {
+                width: 100%;
+            }
+        }
+
+        /* hover content */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .items {
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        .item h4 {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 35px;
+            background-color: chocolate;
+            border-bottom: 2px solid #00021c;
+        }
+
+        .item p {
+            background-color: khaki;
+            height: 0px;
+            transition: height 1s;
+        }
+
+        .item:hover p {
+            height: 150px;
+        }
+
+        /* hover content end*/
+
+
+
+        /* timeline */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #introduce body {
+            font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+            /* background: #8e9aaf; */
+            color: #fff;
+            overflow-x: hidden;
+            padding-bottom: 50px;
+        }
+
+        #introduce {
+            float: left;
+            /* margin-right: 100px; */
+            position: relative;
+            padding: 0px 30px 0 30px;
+            margin-left: 300px;
+
+
+        }
+
+        /* INTRO SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+        .intro {
+            background: #8e9aaf;
+            padding: 0;
+
+        }
+
+        .intro_header {
+            background-color: #8e9aaf;
+        }
+
+        .intro_header {
+            width: 90%;
+            /* max-width: 1200px; */
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .intro h1 {
+            font-size: 2.5rem;
+            padding: 0 150px 0 150px;
+        }
+
+        /* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+        .timeline ul {
+            background: #dee2ff;
+            /* margin-left: 100px; */
+        }
+
+        .timeline ul li {
+            list-style-type: none;
+            position: relative;
+            width: 6px;
+            margin: 0 auto;
+            padding-top: 50px;
+            background: #fff;
+        }
+
+        .timeline ul li::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: inherit;
+            z-index: 1;
+        }
+
+        .timeline ul li div {
+            position: relative;
+            bottom: 0;
+            width: 250px;
+            padding: 10px;
+            background: #8e9aaf;
+        }
+
+        .timeline ul li div::before {
+            content: "";
+            position: absolute;
+            bottom: 7px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .timeline ul li:nth-child(odd) div {
+            left: 45px;
+        }
+
+        .timeline ul li:nth-child(odd) div::before {
+            left: -15px;
+            border-width: 8px 16px 8px 0;
+            border-color: transparent #8e9aaf transparent transparent;
+        }
+
+        /* 左邊 */
+        .timeline ul li:nth-child(even) div {
+            left: -287.5px;
+        }
+
+        .timeline ul li:nth-child(even) div::before {
+            right: -15px;
+            border-width: 8px 0 8px 16px;
+            border-color: transparent transparent transparent #8e9aaf;
+        }
+
+        time {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        /* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .timeline ul li::after {
+            transition: background 0.5s ease-in-out;
+        }
+
+        .timeline ul li.in-view::after {
+            background: #8e9aaf;
+        }
+
+        .timeline ul li div {
+            visibility: hidden;
+            opacity: 0.5;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .timeline ul li:nth-child(odd) div {
+            transform: translate3d(200px, 0, 0);
+        }
+
+        .timeline ul li:nth-child(even) div {
+            transform: translate3d(-200px, 0, 0);
+        }
+
+        .timeline ul li.in-view div {
+            transform: none;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+        @media screen and (max-width: 900px) {
+            .timeline ul li div {
+                width: 233px;
+            }
+
+            .timeline ul li:nth-child(even) div {
+                left: -272px;
+                /*233+45-6*/
+            }
+
+            #introduce {
+                width: 100%;
+                margin-left: 5px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline ul li {
+                margin-left: 20px;
+            }
+
+            .timeline ul li div {
+                width: calc(100vw - 91px);
+            }
+
+            .timeline ul li:nth-child(even) div {
+                left: 45px;
+            }
+
+            .timeline ul li:nth-child(even) div::before {
+                left: -15px;
+                border-width: 8px 16px 8px 0;
+                border-color: transparent #8e9aaf transparent transparent;
+            }
+
+            #introduce {
+                width: 100%;
+            }
+        }
+
+        /* EXTRA/CLIP PATH STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .timeline-clippy ul li::after {
+            width: 40px;
+            height: 40px;
+            border-radius: 0;
+        }
+
+        .timeline-rhombus ul li::after {
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        .timeline-rhombus ul li div::before {
+            bottom: 12px;
+        }
+
+        .timeline-star ul li::after {
+            clip-path: polygon(50% 0%,
+                    61% 35%,
+                    98% 35%,
+                    68% 57%,
+                    79% 91%,
+                    50% 70%,
+                    21% 91%,
+                    32% 57%,
+                    2% 35%,
+                    39% 35%);
+        }
+
+        .timeline-heptagon ul li::after {
+            clip-path: polygon(50% 0%,
+                    90% 20%,
+                    100% 60%,
+                    75% 100%,
+                    25% 100%,
+                    0% 60%,
+                    10% 20%);
+        }
+
+        .timeline-infinite ul li::after {
+            animation: scaleAnimation 2s infinite;
+        }
+
+        @keyframes scaleAnimation {
+            0% {
+                transform: translateX(-50%) scale(1);
+            }
+
+            50% {
+                transform: translateX(-50%) scale(1.25);
+            }
+
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        /* FOOTER STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .page-footer {
+            position: fixed;
+            right: 0;
+            bottom: 20px;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            color: black;
+            background: rgba(255, 255, 255, 0.65);
+        }
+
+        .page-footer a {
+            display: flex;
+            margin-left: 4px;
+        }
+
+        /* footer */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 30px 0 20px;
+            background-color: #000;
+
+        }
+
+        .sns ul li {
+            display: inline-block;
+            width: 40px;
+        }
+
+        .sns ul li a {
+            font-size: 22px;
+            font-size: 1.83333rem;
+            color: rgb(255, 255, 255);
+        }
+
+        footer .sns {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .fab {
+            font-family: "Font Awesome 5 Brands";
+        }
+
+        .sns {
+            margin-top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+
+
+        @media screen and (min-width: 900px) {
+            .footer {
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width: 600px) {
+            .footer {
+                width: 100%;
+            }
+        }
+
+        /* footer */
+    </style>
+
+</head>
+
+<body>
+    <!-- header -->
+    <div id="exterior_wrapper">
+        <header style="padding-bottom: 0px;">
+
+            <div class="header">
+
+                <img src="img/mafuheader-1.png" alt="">
+            </div>
+
+            <div class="topnav">
+                <a href="#">關於本站</a>
+                <a href="#">Live</a>
+                <a href="#">活動</a>
+            </div>
+        </header>
+
+        <div id="main_container">
+            <div id="container">
+
+                <div id="list" style="left: -600px;">
+
+                    <a href="https://mafumafu-10th-anniversary.com" target="_blank">
+                        <img src="/img/banner03.jpg" alt="1" />
+
+                        <a href="https://mafumafu-10th-anniversary.com" target="_blank">
+                            <img src="/img/banner03.jpg" alt="1" />
+
+                            <a href="https://hikikomoridemo.jp/" target="_blank">
+                                <img src="/img/banner01.jpg"
+                                    alt="1" />
+                            </a>
+
+                            <a href="https://kagurairo-artifact.com" target="_blank">
+                                <img src="/img/banner02.jpg"
+                                    alt="2" />
+                            </a>
+
+
+
+                            <a href="https://mafumafu-10th-anniversary.com" target="_blank">
+                                <img src="/img/banner03.jpg"
+                                    alt="3" />
+                            </a>
+                            <a href="https://hikikomoridemo.jp/" target="_blank">
+                                <img src="/img/banner01.jpg"
+                                    alt="3" />
+                            </a>
+                        </a>
+                    </a>
+
+                </div>
+
+                <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+                <a href="javascript:;" id="next" class="arrow">&gt;</a>
+
+            </div>
+            <!-- content -->
+        </div>
+
+        <!-- contetn_area -->
+        <div id="content_area">
+
+            <div id="channel">
+
+                <div class="wrapper">
+
+                    <h2>
+                        <img src="http://uni-mafumafu.jp/wp-content/themes/mafumafu/images/tit_channel.png"
+                            alt="mafumafu OFFICIAL CHANNEL" />
+                    </h2>
+
+                    <div class="channel_area">
+
+                        <ul>
+
+                            <li>
+                                <div class="channel">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/videoseries?list=PLLkGVD9RIO_BI66nhaUxFS8V72gl1tbyM"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <a href="https://youtube.com/playlist?list=PLLkGVD9RIO_BI66nhaUxFS8V72gl1tbyM">
+                                    <p style="color: #ddd;">Music Video</p>
+                                </a>
+                            </li>
+
+                            <li>
+                                <div class="channel">
+
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/videoseries?list=PLLkGVD9RIO_D68FR4jAQlBQ5uAKJc_LWW"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <a href="https://youtube.com/playlist?list=PLLkGVD9RIO_D68FR4jAQlBQ5uAKJc_LWW">
+                                    <p style="color: #ddd;">翻唱</p>
+                                </a>
+
+
+                            </li>
+
+                            <li>
+                                <div class="channel">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/videoseries?list=PLLkGVD9RIO_AVZgiJ5Yjr5qLLA574Inf7"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <a href="https://youtube.com/playlist?list=PLLkGVD9RIO_AVZgiJ5Yjr5qLLA574Inf7">
+                                    <p style="color: #ddd;">奇怪的影片</p>
+                                </a>
+                            </li>
+
+                            <li>
+                                <div class="channel">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/videoseries?list=PLLkGVD9RIO_DsQAvPUcsFUGzw6N5Ltxno"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <a href="https://youtube.com/playlist?list=PLLkGVD9RIO_DsQAvPUcsFUGzw6N5Ltxno">
+                                    <p style="color: #ddd;"> 遊戲實況</p>
+                                </a>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+
+                    <div class="channel_btn">
+                        <a href="https://www.youtube.com/channel/UCOTR1tcOAhjgi6YukrPpZxg" target="_blank">
+                            <img src="http://uni-mafumafu.jp/wp-content/themes/mafumafu/images/btn_yt.png" />
+                        </a>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <!-- main -->
+            <div id="main">
+
+                <div class="wrapper_news">
+
+                    <!-- news -->
+                    <section id="news">
+                        <h2><span>N</span>EWS<img id="beru_c"
+                                src="http://uni-mafumafu.jp/wp-content/themes/mafumafu/images/img_beru_c.png" />
+                        </h2>
+                        <ul class="news_list">
+
+
+                            <li>
+                                <a class="text"
+                                    href="http://uni-mafumafu.jp/news/%e6%9d%b1%e4%ba%ac%e3%83%89%e3%83%bc%e3%83%a0%e3%81%8b%e3%82%89%e5%85%a8%e4%b8%96%e7%95%8c%e3%81%ab%e5%90%91%e3%81%91%e3%81%a6%e7%84%a1%e6%96%99%e9%85%8d%e4%bf%a1%e3%83%a9%e3%82%a4%e3%83%96%e9%96%8b/">
+                                    <p class="news_date">2021.03.13</p>
+                                    <p class="news_tit">東京ドームから全世界に向けて無料配信ライブ開催！</p>
+                                </a>
+                            </li>
+
+
+
+                            <li>
+                                <a class="text"
+                                    href="http://uni-mafumafu.jp/news/%e4%b9%83%e6%9c%a8%e5%9d%8246%e3%81%ae%e3%81%8b%e3%82%89%e3%81%82%e3%81%92%e5%a7%89%e5%a6%b9%e3%81%93%e3%81%a8%e7%94%9f%e7%94%b0%e7%b5%b5%e6%a2%a8%e8%8a%b1%e3%81%95%e3%82%93%e3%80%81/">
+                                    <p class="news_date">2021.01.07</p>
+                                    <p class="news_tit">乃木坂46の“からあげ姉妹”こと生田絵梨花さん、松村沙友理さんが「1・2・3」を歌唱！</p>
+                                </a>
+                            </li>
+
+
+
+                            <li>
+                                <a class="text"
+                                    href="http://uni-mafumafu.jp/news/%e3%81%be%e3%81%b5%e3%81%be%e3%81%b5%e6%b4%bb%e5%8b%9510%e5%91%a8%e5%b9%b4/">
+                                    <p class="news_date">2020.12.29</p>
+                                    <p class="news_tit">おかげさまで活動10周年を迎えました！</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <div class="more">
+                            <a href="http://uni-mafumafu.jp/news/">&nbsp;&nbsp;MORE&nbsp;&nbsp;▶</a>
+                        </div>
+                    </section>
+                    <!-- /news -->
+                    <!--floatimg -->
+                    <div class="column">
+                        <h2>まふまふとは誰なのか？</h2>
+                        <div id="main_visual" class="main_visual">
+
+                            <img id="singer_bg_1" src="img/mafubg.png" class="loaded"></img>
+                            <!-- <img id="singer_bg_2" src="img/mafubg-2.png" class="loaded"></img>
+                        <img id="singer_bg_3" src="img/mafubg-3.png" class="loaded"></img> -->
+
+                            <img id="singer" src="img/mafu.png" class="loaded">
+                        </div>
+                    </div>
+
+                    <!-- tw widget -->
+                    <section id="tw_widget">
+                        <div id="tw_widget_cont">
+                            <div>
+                                <a class="twitter-timeline" data-chrome="nofooter"
+                                    href="https://twitter.com/uni_mafumafu" height="555" width="553"
+                                    data-widget-id="687461744306860032">@uni_mafumafuさんのツイート</a>
+                                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+                            </div>
+                        </div>
+
+                        <!-- links -->
+                        <section id="links">
+                            <ul class="banner_area">
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCOTR1tcOAhjgi6YukrPpZxg" target="_blank">
+                                        <img src="http://uni-mafumafu.jp/wp-content/uploads/2016/02/bn_yt.jpg" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.nicovideo.jp/mylist/22993832" target="_blank">
+                                        <img src="http://uni-mafumafu.jp/wp-content/uploads/2016/02/bn_niconico.jpg" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://line.me/ti/p/%40uni_mafumafu" target="_blank">
+                                        <img
+                                            src="http://uni-mafumafu.jp/wp-content/uploads/2016/02/bn_niconico-1.jpg" />
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </section>
+                    </section>
+                    <!-- /tw widget -->
+                    <div id="introduce">
+                        <section class="intro">
+                            <div class="container">
+                                <h1>MafuMafu 大事記 &darr;</h1>
+
+
+
+                                <section class="timeline">
+                                    <ul>
+                                        <li>
+                                            <div>
+                                                <time>2010</time> 開始於日本影音平台「ニコニコ動画」上傳翻唱作品
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <time>2017</time>
+                                                <p>
+                                                    <a href="https://natalie.mu/music/news/210810">1月15日
+                                                        於「幕張展覽館」舉辦首場個人演唱會,2月5日加場</a>
+                                                    <a href="https://natalie.mu/music/news/219838">2月5日 加場</a><br>
+                                                    <br>
+                                                    <a href="https://rockinon.com/live/detail/160531">5月7日
+                                                        主辦「家裡蹲也想辦演唱會！(ひきこもりたちでもフェスがしたい！)」演唱會,召集八位人氣翻唱歌手共演</a><br>
+                                                    <br><a href="http://uni-mafumafu.jp/discography/asuiro/">10月18日
+                                                        於生日當天發行首張個人專輯『明日色ワールドエンド』</a>
+                                                </p>
+
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <time>2018</time>
+                                                <p>
+                                                    <a href="https://realsound.jp/2018/12/post-293749.html">12月19日
+                                                        與Yahoo!
+                                                        JAPAN合作新節目『家裡蹲也想做○○！(ひきこもりでも○○したい！)』,邀請了許多好友參加！</a><br><br>
+                                                    <a href="https://realsound.jp/tech/2019/09/post-421072.html">2019年9月26日
+                                                        好評推出第二季『ひきこもりでも〇〇したい！2nd』 </a>
+
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <time>2019</time> <a href="https://natalie.mu/music/news/317472"> 3月13日
+                                                    擔任迪士尼官方翻唱專輯製作人,該專輯有六位歌手參加</a><br><br>
+                                                <a href="https://natalie.mu/music/news/337192"> 10月14日
+                                                    於西武巨蛋舉辦個人演唱會,吸引3.5萬人入場!</a><br><br>
+                                                <a href="https://mafusoku.com/archives/19648842.html">10月16日
+                                                    發行第二章個人專輯,首周熱銷十萬張,為Oricon周榜第2！</a><br><br>
+                                                <a href="https://natalie.mu/music/news/353811"> 同年11月
+                                                    為《神奇寶貝》製作片頭曲「1・2・3」,且由本人和そらる所組成的「After the Rain」擔任演唱</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <time>2020</time><a href="https://natalie.mu/music/news/370963"> 3月25日
+                                                    原預定於東京巨蛋舉辦個人演唱會,但因武漢肺炎影響而取消</a><br><br>
+                                                <a href="https://www.oricon.co.jp/news/2169906/full/"> 6月22日
+                                                    發行2019年個人演唱會DVD</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <time>2021</time><a
+                                                    href="https://www.youtube.com/watch?v=zbqSOzLE8YI&t=5934s"> 5月5日
+                                                    於YOUTUBE頻道上舉辦了全球免費觀看的東京巨蛋的線上演唱會,同時觀看數超過四十萬人！</a><br><br>
+                                                <a href="https://hikikomoritachidemo.jp/"> 8月1日
+                                                    舉行「ひきこもりたちでもフェスがしたい！～世界征服II@東京ドーム～ONLINE」全球線上演唱會,並且能在電影院買票觀賞轉播</a><br><br>
+                                                <a href="https://www.youtube.com/watch?v=mTyQyMJCrik">10月23日
+                                                    與おいて、そらる、渋谷ハル、プロゲーミングチーム共同成立VTUBER事務所「Neo-Porte」</a><br><br>
+                                                <a
+                                                    href="https://news.yahoo.co.jp/articles/943850716e51f05c9402e8840a1b6ef1a14623fb">12月31日
+                                                    首次參加日本第72屆紅白歌合戰!演唱破億翻唱神曲「命に嫌われている。」</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <time>2022</time><a
+                                                    href="https://news.ponycanyon.co.jp/2022/03/68301">6月11至12日
+                                                    終於!等待了兩年,即將在東京巨蛋連兩日舉辦現場演唱會!</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </div>
+                        </section>
+                    </div>
+                    </section>
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <script>
+
+
+
+        (function () {
+            "use strict";
+
+            // define variables
+            var items = document.querySelectorAll(".timeline li");
+
+            // check if an element is in viewport
+            // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <=
+                    (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function callbackFunc() {
+                for (var i = 0; i < items.length; i++) {
+                    if (isElementInViewport(items[i])) {
+                        items[i].classList.add("in-view");
+                    }
+                }
+            }
+
+            // listen for events
+            window.addEventListener("load", callbackFunc);
+            window.addEventListener("resize", callbackFunc);
+            window.addEventListener("scroll", callbackFunc);
+        })();
+
+
+        window.onload = function () {
+            var list = document.getElementById('list');
+            var prev = document.getElementById('prev');
+            var next = document.getElementById('next');
+
+            function animate(offset) {
+                /*獲取的是style.left，是相對左邊獲取距離，所以第一張圖后style.left都為負值，
+                且style.left獲取的是字符串，需要用parseInt()取整轉化為數字。*/
+                var newLeft = parseInt(list.style.left) + offset;
+                list.style.left = newLeft + 'px';
+                if (newLeft < -1800) {
+                    list.style.left = -600 + 'px';
+                }
+                if (newLeft > -600) {
+                    list.style.left = -1800 + 'px';
+                }
+            }
+            /*上一步*/
+            prev.onclick = function () {
+                animate(600);
+            }
+            /*下一步*/
+            next.onclick = function () {
+                animate(-600);
+            }
+            /*自動循環播放*/
+            var timer;
+
+            function play() {
+                timer = setInterval(function () {
+                    prev.onclick();
+                }, 2000)
+            }
+            play();
+            /*鼠標放上（離開）對應輪播暫停（播放）*/
+            var container = document.getElementById('container');
+            function stop() {
+                clearInterval(timer);
+            }
+            container.onmouseover = stop;
+            container.onmouseout = play;
+        }
+    </script>
+</body>
+<!-- footer -->
+<footer class="container navbar-fixed-bottom">
+    <div class="footer">
+        <div class="sns">
+            <ul>
+                <li>
+                    <a href="https://twitter.com/uni_mafumafu" target="_blank" class="twitter"><img
+                            src="img/twittericon.png" /></a>
+                </li>
+
+                <li>
+                    <a href="https://www.youtube.com/channel/UCOTR1tcOAhjgi6YukrPpZxg" class="youtube" target="_blank">
+                        <img src="img/youtubeicon.png" /></a>
+                </li>
+                <li>
+                    <a href="http://www.nicovideo.jp/mylist/22993832" class="niconico" target="_blank"> <img
+                            src="http://uni-mafumafu.jp/wp-content/themes/mafumafu/images/ico_niconico.png" /></a>
+                </li>
+            </ul>
+        </div>
+        <p class="copyrights">&copy;2022 uni-mafumafu-fanclab</p>
+
+    </div>
+</footer>
+<!-- /footer -->
+</div>
+
+</html>
